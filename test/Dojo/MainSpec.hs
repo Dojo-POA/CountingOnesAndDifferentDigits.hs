@@ -41,8 +41,10 @@ spec = do
       differentDigits [0..2] `shouldBe` 3
     it "is 11 when range is 0 to 10" $ do
       differentDigits [0..10] `shouldBe` 11
-    --it "is 11 when range is 0 to 11" $ do
-    --  differentDigits [0..11] `shouldBe` 11
+    it "is 11 when range is 0 to 11" $ do
+      differentDigits [0..11] `shouldBe` 11
+    it "is 11 when range is 0 to 11" $ do
+      differentDigits [100000..999999999] `shouldBe` 1
 
   describe "Has repeated digits" $ do
     it "is false when number is 1" $ do

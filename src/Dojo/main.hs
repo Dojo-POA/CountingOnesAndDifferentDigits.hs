@@ -12,9 +12,12 @@ countOnesNumber n =
 	where (division, modulus) = divMod n 2
 
 differentDigits :: [Int] -> Int
-differentDigits list = length list
+differentDigits list = length listNonRepetedNumbers
+	where listNonRepetedNumbers = filter (not . hasRepeatedDigits) list
+
 
 hasRepeatedDigits :: Int -> Bool
-hasRepeatedDigits n = 
-	length digits /= size (fromList digits)
-	where digits = show n
+hasRepeatedDigits n 
+	| n > 9876543210 = False
+	| otherwise = length digits /= size (fromList digits)
+		where digits = show n
