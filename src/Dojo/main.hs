@@ -9,3 +9,6 @@ countOnesNumber 0 = 0
 countOnesNumber n = 
 	modulus + countOnesNumber division
 	where (division, modulus) = divMod n 2
+
+differentDigits :: [Int] -> Int
+differentDigits list = 2

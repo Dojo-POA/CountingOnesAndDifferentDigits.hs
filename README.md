@@ -1,2 +1,2 @@
-something.hs
+couting_ones.hs
 ==============

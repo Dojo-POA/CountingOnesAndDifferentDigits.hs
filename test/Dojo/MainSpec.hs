@@ -17,8 +17,7 @@ spec = do
       countOnes 0 3 `shouldBe` 4
     it "is 21 when couting ones between 2 and 12" $ do
       countOnes 2 12 `shouldBe` 21
-    it "is 239502115812196372 when couting ones between 1000000000000000 and 10000000000000000" $ do
-      countOnes 1000000000000000 10000000000000000 `shouldBe` 239502115812196372
+    
 
 
 
@@ -34,3 +33,7 @@ spec = do
       countOnesNumber 3 `shouldBe` 2
     it "is 2 when couting ones for 3" $ do
       countOnesNumber 7 `shouldBe` 3
+
+  describe "Different digits" $ do
+    it "is 1 when range is 0 to 1" $ do
+      differentDigits [0..1] `shouldBe` 2
