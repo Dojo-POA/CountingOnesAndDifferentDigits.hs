@@ -1,4 +1,5 @@
 module Dojo.Main where 
+import Data.Set (fromList, size)
 
 countOnes :: Int -> Int -> Int
 countOnes a b = somaList $ map countOnesNumber [a..b]
@@ -11,4 +12,9 @@ countOnesNumber n =
 	where (division, modulus) = divMod n 2
 
 differentDigits :: [Int] -> Int
-differentDigits list = 2
+differentDigits list = length list
+
+hasRepeatedDigits :: Int -> Bool
+hasRepeatedDigits n = 
+	length digits /= size (fromList digits)
+	where digits = show n
