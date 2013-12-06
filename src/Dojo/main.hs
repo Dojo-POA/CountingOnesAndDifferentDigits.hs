@@ -19,5 +19,13 @@ differentDigits list = length listNonRepetedNumbers
 hasRepeatedDigits :: Int -> Bool
 hasRepeatedDigits n 
 	| n > 9876543210 = False
-	| otherwise = length digits /= size (fromList digits)
-		where digits = show n
+	| otherwise = length digits /= length amount
+    where		
+		digits = show n
+		amount = takeWhile (not . leRepeated) (meAndRest digits) 
+		
+meAndRest :: [a] -> [(a, [a])]
+meAndRest [] = [] 
+meAndRest (x:xs) = (x, xs):meAndRest xs
+
+leRepeated (i, rest) = elem i rest
